@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b3d2e">
+  <meta name="description" content="NISGS Constitution Awareness & Digital Access Initiative (CADAI)">
+  <title>NISGS Constitution | CADAI</title>
+  <style>
+    :root{
+      --green:#0b3d2e;
+      --green2:#145c45;
+      --lime:#82d42b;
+      --ink:#132019;
+      --muted:#607068;
+      --bg:#f5f8f6;
+      --card:#ffffff;
+      --line:#dfe8e2;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .topbar{
+      background:var(--green);
+      color:#fff;
+      font-size:13px;
+      text-align:center;
+      padding:8px 16px;
+      letter-spacing:.2px;
+    }
+    header{
+      background:linear-gradient(145deg,var(--green),#092d23);
+      color:#fff;
+      padding:58px 20px 72px;
+      position:relative;
+      overflow:hidden;
+    }
+    header:after{
+      content:"";
+      position:absolute;
+      width:300px;height:300px;
+      right:-120px;top:-140px;
+      border:55px solid rgba(130,212,43,.12);
+      border-radius:50%;
+    }
+    .wrap{max-width:1000px;margin:auto}
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      font-weight:800;letter-spacing:.3px;
+    }
+    .mark{
+      width:44px;height:44px;border-radius:12px;
+      display:grid;place-items:center;
+      background:rgba(130,212,43,.16);
+      border:1px solid rgba(130,212,43,.45);
+      color:var(--lime);font-weight:900;
+    }
+    .hero{max-width:780px;margin:52px auto 0;text-align:center}
+    .eyebrow{
+      color:var(--lime);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:12px;font-weight:800;
+    }
+    h1{font-size:clamp(32px,7vw,58px);line-height:1.05;margin:14px 0 16px}
+    .hero p{font-size:17px;color:#d9e7df;max-width:680px;margin:0 auto 28px}
+    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{
+      display:inline-block;text-decoration:none;
+      padding:13px 19px;border-radius:10px;
+      font-weight:800;font-size:14px;
+    }
+    .btn.primary{background:var(--lime);color:#10210f}
+    .btn.secondary{border:1px solid rgba(255,255,255,.35);color:#fff}
+    main{padding:42px 20px 60px}
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:18px;margin-bottom:34px;
+    }
+    .card{
+      background:var(--card);border:1px solid var(--line);
+      border-radius:16px;padding:24px;
+      box-shadow:0 8px 28px rgba(17,50,35,.05);
+    }
+    .icon{
+      width:42px;height:42px;border-radius:11px;
+      display:grid;place-items:center;
+      background:#edf7e7;color:var(--green);
+      font-size:20px;margin-bottom:15px;
+    }
+    h2{font-size:28px;line-height:1.2;margin:0 0 12px}
+    h3{margin:0 0 8px;font-size:18px}
+    .muted{color:var(--muted)}
+    .section{margin:46px 0}
+    .section-head{margin-bottom:18px}
+    .section-head p{margin:5px 0 0;color:var(--muted)}
+    .constitution{
+      display:grid;grid-template-columns:1.3fr .7fr;gap:20px;
+    }
+    .feature{
+      background:var(--green);color:#fff;border-radius:18px;
+      padding:30px;position:relative;overflow:hidden;
+    }
+    .feature:after{
+      content:"§";
+      position:absolute;right:24px;bottom:-35px;
+      font-size:170px;font-weight:900;
+      color:rgba(255,255,255,.06);
+    }
+    .feature p{color:#dbe9e2}
+    .feature .btn{margin-top:10px}
+    .status{
+      background:#f1f7f3;border:1px solid var(--line);
+      border-radius:14px;padding:20px;
+    }
+    .status-row{
+      display:flex;justify-content:space-between;gap:15px;
+      padding:10px 0;border-bottom:1px solid var(--line);
+      font-size:14px;
+    }
+    .status-row:last-child{border-bottom:0}
+    .badge{
+      display:inline-block;padding:4px 9px;border-radius:99px;
+      background:#e5f4dc;color:#2e6616;font-weight:800;font-size:12px;
+    }
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .step-num{
+      width:32px;height:32px;border-radius:50%;
+      background:var(--green);color:#fff;
+      display:grid;place-items:center;font-weight:800;margin-bottom:12px;
+    }
+    .notice{
+      border-left:4px solid var(--lime);
+      background:#fff;padding:20px 22px;border-radius:10px;
+      border-top:1px solid var(--line);
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    footer{
+      background:#092d23;color:#cfe0d7;
+      padding:30px 20px;text-align:center;font-size:13px;
+    }
+    footer strong{color:#fff}
+    @media(max-width:760px){
+      .grid,.constitution,.steps{grid-template-columns:1fr}
+      header{padding-top:40px}
+      .hero{margin-top:40px}
+      main{padding-top:30px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">NISGS • Constitution Awareness & Digital Access Initiative (CADAI)</div>
+
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <div class="mark">N</div>
+        <div>NISGS</div>
+      </div>
+
+      <div class="hero">
+        <div class="eyebrow">Know it. Access it. Uphold it.</div>
+        <h1>Your Constitution, One Scan Away.</h1>
+        <p>
+          A digital access and awareness initiative designed to make the
+          NISGS Constitution easier for members to find, read and understand.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="nisgs-constitution.pdf" target="_blank" rel="noopener">
+            📖 Read the Constitution
+          </a>
+          <a class="btn secondary" href="#about">Explore CADAI</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2>About CADAI</h2>
+        <p>Constitution Awareness & Digital Access Initiative</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Easy Access</h3>
+          <p class="muted">
+            Members can use their phones to reach the current official
+            Constitution through a single digital access point.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">⚖️</div>
+          <h3>Constitutional Awareness</h3>
+          <p class="muted">
+            CADAI supports awareness of the rules, procedures, rights and
+            responsibilities established by the Constitution.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔗</div>
+          <h3>One Access Point</h3>
+          <p class="muted">
+            QR codes placed on approved NISGS materials can direct members
+            to this page instead of relying on old messages in group chats.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="constitution">
+        <div class="feature">
+          <div class="eyebrow">Official Digital Copy</div>
+          <h2>NISGS Constitution</h2>
+          <p>
+            Access the current approved digital copy of the NISGS Constitution.
+            Please confirm the document has been approved for publication
+            before deploying this page officially.
+          </p>
+          <a class="btn primary" href="nisgs-constitution.pdf" target="_blank" rel="noopener">
+            Open Constitution
+          </a>
+        </div>
+
+        <div class="status">
+          <h3>Document Information</h3>
+          <div class="status-row">
+            <span>Status</span>
+            <span class="badge">Official Copy</span>
+          </div>
+          <div class="status-row">
+            <span>Format</span>
+            <span>PDF</span>
+          </div>
+          <div class="status-row">
+            <span>Access</span>
+            <span>Free</span>
+          </div>
+          <div class="status-row">
+            <span>Last updated</span>
+            <span>[ADD DATE]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>What Members Can Find Here</h2>
+        <p>Awareness content can be expanded as the initiative develops.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="icon">🏛️</div>
+          <h3>Institutional Structure</h3>
+          <p class="muted">
+            A simple guide to the offices, bodies and structures established
+            by the approved Constitution.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">👥</div>
+          <h3>Members' Responsibilities</h3>
+          <p class="muted">
+            Plain-language awareness content based strictly on provisions
+            contained in the approved Constitution.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📋</div>
+          <h3>Meeting & Congress Procedures</h3>
+          <p class="muted">
+            Helpful explanations of relevant procedures, subject to the
+            wording and authority of the Constitution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>How CADAI Works</h2>
+      </div>
+
+      <div class="steps">
+        <div class="card">
+          <div class="step-num">1</div>
+          <h3>Scan</h3>
+          <p class="muted">Scan the CADAI QR code on an approved NISGS material.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">2</div>
+          <h3>Open</h3>
+          <p class="muted">The CADAI page opens on your phone.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">3</div>
+          <h3>Read</h3>
+          <p class="muted">Open the current approved Constitution in PDF format.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">4</div>
+          <h3>Understand</h3>
+          <p class="muted">Use the awareness materials to better understand relevant provisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <strong>Official-use notice:</strong>
+        This platform is intended to provide convenient digital access to the
+        approved NISGS Constitution. Any constitutional interpretation,
+        amendment or update should follow the appropriate NISGS authority and
+        procedure. Replace bracketed placeholders before official publication.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>NISGS • CADAI</strong><br>
+    Constitution Awareness & Digital Access Initiative
+  </footer>
+
+</body>
+</html>
