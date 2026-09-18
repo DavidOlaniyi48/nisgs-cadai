@@ -30,6 +30,7 @@
       background: rgba(57, 255, 20, 0.05);
       z-index: -1;
     }
+
     body::after {
       content: '';
       position: fixed;
@@ -42,6 +43,7 @@
       z-index: -1;
     }
 
+    /* --- TOP BAR --- */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -50,6 +52,7 @@
       padding-top: 10px;
       gap: 10px;
     }
+
     .top-bar img {
       height: 55px;
       width: auto;
@@ -58,6 +61,7 @@
       filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
       flex-shrink: 0;
     }
+
     .top-bar-title {
       flex: 1;
       text-align: center;
@@ -69,6 +73,7 @@
       text-transform: uppercase;
       padding: 0 4px;
     }
+
     .top-bar-title .chapter {
       display: block;
       color: #39FF14;
@@ -77,6 +82,7 @@
       margin-top: 2px;
     }
 
+    /* --- HERO --- */
     .hero {
       flex: 1;
       display: flex;
@@ -93,7 +99,10 @@
       color: #ffffff;
       letter-spacing: -1px;
     }
-    .hero h1 .highlight { color: #39FF14; }
+
+    .hero h1 .highlight {
+      color: #39FF14;
+    }
 
     .hero p.intro {
       font-size: 14.5px;
@@ -113,6 +122,7 @@
       letter-spacing: 0.3px;
     }
 
+    /* --- BUTTONS --- */
     .btn-group {
       display: flex;
       flex-direction: column;
@@ -142,30 +152,44 @@
     .btn-primary {
       background: linear-gradient(135deg, #39FF14 0%, #2FE00F 100%);
       color: #0A2E1F;
-      box-shadow: 0 6px 0 #1f8a0a, 0 10px 25px rgba(57, 255, 20, 0.3);
+      box-shadow:
+        0 6px 0 #1f8a0a,
+        0 10px 25px rgba(57, 255, 20, 0.3);
       border: none;
     }
+
     .btn-primary::before {
       content: '';
       position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
       transition: left 0.6s ease;
     }
+
     .btn-primary:active {
       transform: translateY(4px);
-      box-shadow: 0 2px 0 #1f8a0a, 0 4px 12px rgba(57, 255, 20, 0.4);
+      box-shadow:
+        0 2px 0 #1f8a0a,
+        0 4px 12px rgba(57, 255, 20, 0.4);
     }
-    .btn-primary:active::before { left: 100%; }
+
+    .btn-primary:active::before {
+      left: 100%;
+    }
 
     .btn-secondary {
       background: rgba(255, 255, 255, 0.04);
       color: #ffffff;
       border: 1.5px solid rgba(255, 255, 255, 0.25);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.15);
       backdrop-filter: blur(6px);
     }
+
     .btn-secondary:active {
       background: rgba(255, 255, 255, 0.12);
       border-color: rgba(255, 255, 255, 0.55);
@@ -176,23 +200,33 @@
       background: transparent;
       color: #39FF14;
       border: 1.5px solid rgba(57, 255, 20, 0.45);
-      box-shadow: inset 0 0 12px rgba(57, 255, 20, 0.06), 0 4px 15px rgba(57, 255, 20, 0.1);
+      box-shadow:
+        inset 0 0 12px rgba(57, 255, 20, 0.06),
+        0 4px 15px rgba(57, 255, 20, 0.1);
       font-weight: 800;
     }
+
     .btn-tertiary::after {
       content: '→';
       margin-left: 4px;
       transition: transform 0.22s ease;
       display: inline-block;
     }
+
     .btn-tertiary:active {
       background: rgba(57, 255, 20, 0.1);
       border-color: #39FF14;
-      box-shadow: inset 0 0 20px rgba(57, 255, 20, 0.15), 0 4px 20px rgba(57, 255, 20, 0.3);
+      box-shadow:
+        inset 0 0 20px rgba(57, 255, 20, 0.15),
+        0 4px 20px rgba(57, 255, 20, 0.3);
       transform: translateY(2px);
     }
-    .btn-tertiary:active::after { transform: translateX(4px); }
 
+    .btn-tertiary:active::after {
+      transform: translateX(4px);
+    }
+
+    /* --- FOOTER --- */
     .initiative-footer {
       margin-top: auto;
       padding-top: 30px;
@@ -234,6 +268,7 @@
       line-height: 1.6;
     }
 
+    /* --- RESPONSIVE --- */
     @media (max-width: 380px) {
       .hero h1 { font-size: 32px; }
       .hero p.intro { font-size: 13.5px; }
@@ -247,6 +282,7 @@
 </head>
 <body>
 
+  <!-- TOP BAR -->
   <div class="top-bar">
     <img src="logo.png" alt="NISGS Logo">
     <div class="top-bar-title">
@@ -257,6 +293,7 @@
     <img src="futa-logo.png" alt="FUTA Logo">
   </div>
 
+  <!-- HERO -->
   <div class="hero">
     <h1>
       Your Constitution,<br>
@@ -268,7 +305,6 @@
     </p>
 
     <p class="tagline">
-      Access it. Read it. Understand it.<br>
       Know your rights and understand your responsibilities.
     </p>
 
@@ -276,15 +312,18 @@
       <a class="btn btn-primary" href="https://docs.google.com/viewer?url=https://davidolaniyi48.github.io/nisgs-cadai/nisgs-constitution.pdf&embedded=true" target="_blank">
         📖 Access the Constitution
       </a>
+
       <a class="btn btn-secondary" href="nisgs-constitution.pdf" download>
         ⬇️ Download Constitution (PDF)
       </a>
+
       <a class="btn btn-tertiary" href="cadai.html">
         Explore CADAI
       </a>
     </div>
   </div>
 
+  <!-- FOOTER -->
   <div class="initiative-footer">
     <div class="initiative-title">CONSTITUTION AWARENESS &amp; DIGITAL ACCESS INITIATIVE</div>
     <div class="office-tag">OFFICE OF THE CHIEF WHIP</div>
