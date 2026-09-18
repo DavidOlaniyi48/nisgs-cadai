@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About CADAI | NISGS FUTA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0A2E1F;
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(57, 255, 20, 0.05);
+      z-index: -1;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -150px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(57, 255, 20, 0.05);
+      z-index: -1;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #39FF14;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      padding: 8px 16px;
+      border: 1px solid rgba(57, 255, 20, 0.3);
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    }
+    .back-link:active {
+      background: rgba(57, 255, 20, 0.1);
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .tag-pill {
+      display: inline-block;
+      background: #39FF14;
+      color: #0A2E1F;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 16px;
+      color: #39FF14;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    .header .intro {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #A8D5BA;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 5px;
+    }
+
+    /* Cards */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 520px;
+      margin: 0 auto 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1.5px solid rgba(57, 255, 20, 0.25);
+      border-radius: 20px;
+      padding: 24px 22px;
+      text-align: left;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:active {
+      border-color: #39FF14;
+      background: rgba(57, 255, 20, 0.06);
+      transform: scale(0.99);
+    }
+
+    .card .icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #39FF14;
+      margin-bottom: 10px;
+      letter-spacing: 0.3px;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #D4E8DA;
+    }
+
+    /* CTA at bottom */
+    .cta {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 25px 20px;
+      background: rgba(57, 255, 20, 0.08);
+      border-radius: 20px;
+      border: 1px solid rgba(57, 255, 20, 0.2);
+    }
+    .cta p {
+      font-size: 14px;
+      color: #A8D5BA;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    .cta .btn {
+      display: inline-block;
+      background: #39FF14;
+      color: #0A2E1F;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 5px 0 #1f8a0a;
+      transition: all 0.2s ease;
+    }
+    .cta .btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #1f8a0a;
+    }
+
+    /* Footer */
+    .footer {
+      max-width: 520px;
+      margin: 30px auto 0;
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid rgba(57, 255, 20, 0.2);
+    }
+    .footer .initiative {
+      font-size: 10px;
+      color: #39FF14;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .footer .name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .footer .info {
+      font-size: 11px;
+      color: #A8D5BA;
+    }
+
+    @media (max-width: 380px) {
+      .header h1 { font-size: 30px; }
+      .header .subtitle { font-size: 14px; }
+      .header .intro { font-size: 13px; }
+      .card h3 { font-size: 18px; }
+      .card p { font-size: 13px; }
+      .card .icon { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">← Back</a>
+
+  <div class="header">
+    <div class="tag-pill">ABOUT CADAI</div>
+    <h1>Know it. Access it.<br>Uphold it.</h1>
+    <div class="subtitle">Constitutional awareness for a stronger NISGS.</div>
+    <p class="intro">
+      CADAI is a key project of the Office of the Chief Whip, NISGS FUTA Chapter, aligned with the office's vision of strengthening constitutional awareness, discipline and orderly participation.
+    </p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <span class="icon">📘</span>
+      <h3>Know It</h3>
+      <p>Understand the Constitution and the provisions that guide members and the association.</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">📱</span>
+      <h3>Access It</h3>
+      <p>Reach the current digital copy conveniently from your phone through one permanent access point.</p>
+    </div>
+
+    <div class="card">
+      <span class="icon">🤝</span>
+      <h3>Uphold It</h3>
+      <p>Promote responsible participation, discipline, fairness and respect for established procedures.</p>
+    </div>
+
+  </div>
+
+  <div class="cta">
+    <p>Ready to read the Constitution?</p>
+    <a class="btn" href="nisgs-constitution.pdf" target="_blank">
+      📖 Access the Constitution
+    </a>
+  </div>
+
+  <div class="footer">
+    <div class="initiative">CONSTITUTION AWARENESS &amp; DIGITAL ACCESS INITIATIVE</div>
+    <div class="name">Olaniyi David Oluwasegun</div>
+    <div class="info">Office of the Chief Whip • NISGS FUTA Chapter<br>2026/2027 Academic Session</div>
+  </div>
+
+</body>
+</html>
