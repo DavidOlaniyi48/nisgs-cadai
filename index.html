@@ -48,12 +48,33 @@
       align-items: center;
       margin-bottom: 30px;
       padding-top: 10px;
+      gap: 10px;
     }
     .top-bar img {
       height: 55px;
       width: auto;
+      max-width: 55px;
       object-fit: contain;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+      flex-shrink: 0;
+    }
+    .top-bar-title {
+      flex: 1;
+      text-align: center;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      line-height: 1.35;
+      color: #ffffff;
+      text-transform: uppercase;
+      padding: 0 4px;
+    }
+    .top-bar-title .chapter {
+      display: block;
+      color: #39FF14;
+      font-size: 10.5px;
+      letter-spacing: 1.5px;
+      margin-top: 2px;
     }
 
     .hero {
@@ -64,92 +85,113 @@
       padding-bottom: 40px;
     }
 
-    .tag-pill {
-      display: inline-block;
-      background: #39FF14;
-      color: #0A2E1F;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      padding: 8px 20px;
-      border-radius: 50px;
-      margin-bottom: 25px;
-      text-transform: uppercase;
-      align-self: flex-start;
-      box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3);
-    }
-
     .hero h1 {
-      font-size: 42px;
+      font-size: 40px;
       line-height: 1.1;
       font-weight: 800;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       color: #ffffff;
       letter-spacing: -1px;
     }
-    .hero h1 .highlight {
-      color: #39FF14;
+    .hero h1 .highlight { color: #39FF14; }
+
+    .hero p.intro {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #A8D5BA;
+      margin-bottom: 18px;
+      max-width: 95%;
     }
 
-    .hero p {
-      font-size: 15px;
+    .hero p.tagline {
+      font-size: 14px;
       line-height: 1.6;
-      color: #A8D5BA;
-      margin-bottom: 35px;
-      max-width: 90%;
+      color: #39FF14;
+      font-weight: 700;
+      margin-bottom: 30px;
+      max-width: 95%;
+      letter-spacing: 0.3px;
     }
 
     .btn-group {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 14px;
       width: 100%;
     }
 
     .btn {
+      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 18px 24px;
-      border-radius: 16px;
-      font-size: 16px;
+      border-radius: 18px;
+      font-size: 15.5px;
       font-weight: 700;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.22s cubic-bezier(0.2, 0.9, 0.3, 1.2);
       cursor: pointer;
-      border: none;
       width: 100%;
       text-align: center;
       gap: 8px;
+      letter-spacing: 0.2px;
+      overflow: hidden;
     }
 
     .btn-primary {
-      background: #39FF14;
+      background: linear-gradient(135deg, #39FF14 0%, #2FE00F 100%);
       color: #0A2E1F;
-      box-shadow: 0 6px 0 #1f8a0a;
+      box-shadow: 0 6px 0 #1f8a0a, 0 10px 25px rgba(57, 255, 20, 0.3);
+      border: none;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
     }
     .btn-primary:active {
       transform: translateY(4px);
-      box-shadow: 0 2px 0 #1f8a0a;
+      box-shadow: 0 2px 0 #1f8a0a, 0 4px 12px rgba(57, 255, 20, 0.4);
     }
+    .btn-primary:active::before { left: 100%; }
 
     .btn-secondary {
-      background: transparent;
+      background: rgba(255, 255, 255, 0.04);
       color: #ffffff;
-      border: 2px solid rgba(255,255,255,0.3);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 12px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(6px);
     }
     .btn-secondary:active {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.55);
+      transform: translateY(2px);
     }
 
     .btn-tertiary {
       background: transparent;
       color: #39FF14;
-      border: 2px solid rgba(57, 255, 20, 0.4);
+      border: 1.5px solid rgba(57, 255, 20, 0.45);
+      box-shadow: inset 0 0 12px rgba(57, 255, 20, 0.06), 0 4px 15px rgba(57, 255, 20, 0.1);
+      font-weight: 800;
+    }
+    .btn-tertiary::after {
+      content: '→';
+      margin-left: 4px;
+      transition: transform 0.22s ease;
+      display: inline-block;
     }
     .btn-tertiary:active {
       background: rgba(57, 255, 20, 0.1);
+      border-color: #39FF14;
+      box-shadow: inset 0 0 20px rgba(57, 255, 20, 0.15), 0 4px 20px rgba(57, 255, 20, 0.3);
+      transform: translateY(2px);
     }
+    .btn-tertiary:active::after { transform: translateX(4px); }
 
     .initiative-footer {
       margin-top: auto;
@@ -163,7 +205,7 @@
       color: #39FF14;
       font-weight: 800;
       letter-spacing: 1.5px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       text-transform: uppercase;
     }
 
@@ -193,10 +235,13 @@
     }
 
     @media (max-width: 380px) {
-      .hero h1 { font-size: 34px; }
-      .hero p { font-size: 14px; }
-      .btn { padding: 15px 20px; font-size: 14px; }
-      .top-bar img { height: 45px; }
+      .hero h1 { font-size: 32px; }
+      .hero p.intro { font-size: 13.5px; }
+      .hero p.tagline { font-size: 13px; }
+      .btn { padding: 16px 20px; font-size: 14.5px; border-radius: 16px; }
+      .top-bar img { height: 45px; max-width: 45px; }
+      .top-bar-title { font-size: 8.5px; }
+      .top-bar-title .chapter { font-size: 9px; }
     }
   </style>
 </head>
@@ -204,19 +249,27 @@
 
   <div class="top-bar">
     <img src="logo.png" alt="NISGS Logo">
+    <div class="top-bar-title">
+      Nigerian Institution of<br>
+      Surveying and Geoinformatics Students
+      <span class="chapter">FUTA Chapter</span>
+    </div>
     <img src="futa-logo.png" alt="FUTA Logo">
   </div>
 
   <div class="hero">
-    <div class="tag-pill">OFFICE OF THE CHIEF WHIP</div>
-
     <h1>
-      Constitutional awareness<br>
-      for a <span class="highlight">stronger NISGS.</span>
+      Your Constitution,<br>
+      <span class="highlight">One Scan Away.</span>
     </h1>
 
-    <p>
-      An initiative of the Office of the Chief Whip, NISGS FUTA Chapter, created to strengthen constitutional awareness, promote orderly participation, and make the NISGS Constitution easier for members to access and understand.
+    <p class="intro">
+      NISGS Constitution Awareness &amp; Digital Access Initiative (CADAI) is an initiative of the Office of the Chief Whip, NISGS FUTA Chapter, 2026/2027 Session, created to strengthen constitutional awareness and make the NISGS Constitution easier for members to find, read, and understand.
+    </p>
+
+    <p class="tagline">
+      Access it. Read it. Understand it.<br>
+      Know your rights and understand your responsibilities.
     </p>
 
     <div class="btn-group">
@@ -227,7 +280,7 @@
         ⬇️ Download Constitution (PDF)
       </a>
       <a class="btn btn-tertiary" href="cadai.html">
-        Explore CADAI →
+        Explore CADAI
       </a>
     </div>
   </div>
